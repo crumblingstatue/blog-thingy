@@ -99,3 +99,22 @@ Now the question is, is there a way to encode the existence or lack thereof of d
 And if there isn't, should there be?
 
 🦀
+
+-----
+
+P.S.: There is a simple way to make the `impl Trait` version compile. We just need to wrap the
+expression returning the iterator in a block.
+
+```Rust
+if let Some(pos) = {
+    /* Hi, this is a block */
+    player
+        .playlist
+        .iter()
+        .position(|item| item == "crab-rave.mp3")
+} {
+    player.play(pos);
+}
+```
+
+🦀🦀
