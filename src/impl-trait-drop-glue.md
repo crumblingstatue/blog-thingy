@@ -94,11 +94,11 @@ Oh.
 Turns out, by simply returning `impl Iterator`, we lose the information that our returned type does not have drop glue,
 and as we can see, drop glue interacts with the borrow checker, breaking our code.
 
-Now the question is, is there a way to encode the existence or lack thereof of drop glue with `impl Trait`?
+Now my question is, is there a way to encode the existence or lack thereof of drop glue with `impl Trait`?
 
 And if there isn't, should there be?
 
-🦀
+Thanks for reading! 🦀
 
 -----
 
