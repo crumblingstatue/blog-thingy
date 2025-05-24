@@ -125,4 +125,7 @@ For anyone who is confused what drop glue means, it's an automatically generated
 calls the `Drop` implementation of any field you might have.
 You can read more about it at <https://doc.rust-lang.org/std/ops/trait.Drop.html>.
 
+The phase of the borrow checker that deals with drop glue is called
+[drop check](<https://doc.rust-lang.org/std/ops/trait.Drop.html#drop-check>).
+
 🦀🦀🦀
