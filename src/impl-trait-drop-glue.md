@@ -91,8 +91,8 @@ error[E0502]: cannot borrow `player` as mutable because it is also borrowed as i
 
 Oh.
 
-Turns out, by simply returning `impl Iterator`, we lose the information that our returned type does not have drop glue,
-and as we can see, drop glue interacts with the borrow checker, breaking our code.
+Turns out, by simply returning `impl Iterator`, we lose the information that our returned type does not have [drop glue](#drop-glue),
+and as we can see, [drop glue](#drop-glue) interacts with the borrow checker, breaking our code.
 
 Now my question is, is there a way to encode the existence or lack thereof of drop glue with `impl Trait`?
 
@@ -118,3 +118,11 @@ if let Some(pos) = {
 ```
 
 🦀🦀
+
+# Drop glue
+
+For anyone who is confused what drop glue means, it's an automatically generated bit of code that
+calls the `Drop` implementation of any field you might have.
+You can read more about it at <https://doc.rust-lang.org/std/ops/trait.Drop.html>.
+
+🦀🦀🦀
